@@ -1,0 +1,64 @@
+---
+const services = [
+  {
+    title: "Executive Search",
+    description: "Connecting top-tier executives with leading international organizations.",
+    icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+  },
+  {
+    title: "Career Consulting",
+    description: "Personalized guidance for your international career advancement.",
+    icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+  },
+  {
+    title: "Visa & Relocation",
+    description: "Comprehensive support for seamless international transitions.",
+    icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+  },
+  {
+    title: "Industry Expertise",
+    description: "Specialized knowledge across technology, finance, healthcare, and more.",
+    icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+  },
+  {
+    title: "Global Network",
+    description: "Access to exclusive opportunities through our worldwide partnerships.",
+    icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+  },
+  {
+    title: "Talent Development",
+    description: "Training programs to prepare you for international success.",
+    icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+  }
+];
+---
+
+<section id="services" class="py-20 md:py-28 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 lg:mb-20">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-6 animate-on-scroll">
+        World-Class Services
+      </h2>
+      <p class="text-xl text-wips-gray max-w-3xl mx-auto animate-on-scroll">
+        Comprehensive solutions for your international career journey
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+      {services.map((service, index) => (
+        <div 
+          class="group p-8 lg:p-10 rounded-2xl bg-wips-light hover:bg-white hover:shadow-xl transition-all duration-300 animate-on-scroll"
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <div class="w-12 h-12 bg-wips-blue rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={service.icon}></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4">{service.title}</h3>
+          <p class="text-wips-gray leading-relaxed">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
